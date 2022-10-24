@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--2.xml和mapper绑定   namespace=全类名-->
+<mapper namespace="com.atguigu.gmallpublicer.mapper.DauMapper">
+<!--3.指定方法名对应指定sql  sql id = 方法名-->
+    <select id="selectDauTotal" resultType="Integer">
+        select count(*) from GMALL2021_DAU where logdate=#{date}
+    </select>
+
+    <select id="selectDauTotalHourMap" resultMap="dauTotalHour">
+        select LOGHOUR lh, count(*) ct from GMALL2021_DAU where LOGDATE=#{date}
+        group by LOGHOUR
+    </select>
+
+    <resultMap id="dauTotalHour" type="java.util.Map" autoMapping="true">
+    </resultMap>
+</mapper>
