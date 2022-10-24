@@ -30,6 +30,7 @@ public class LoggerController {
     @RequestMapping("test")
     public String test() {
         System.out.println("成功...");
+
         return "success 1 ";
     }
 
