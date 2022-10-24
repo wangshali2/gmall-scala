@@ -27,7 +27,6 @@ public class LoggerController {
 
 
     //http://localhost:8081/test
-
     @RequestMapping("test")
     public String test() {
         System.out.println("成功...");
