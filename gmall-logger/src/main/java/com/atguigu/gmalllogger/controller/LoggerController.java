@@ -58,6 +58,8 @@ public class LoggerController {
 
         log.info(logger);
 
+        //todo kafka加了认证，没有调通，因为是配置参数不对
+
         if ("startup".equals(jsonObject.getString("type"))) {
             kafkaTemplate.send(GmallConstant.GMALL_STARTUP,logger);
 
